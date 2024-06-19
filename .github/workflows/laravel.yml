@@ -21,8 +21,7 @@ jobs:
     - name: Install dependencies
       run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
-    
-
+  
   deploy:
     needs: build
     runs-on: ubuntu-latest
