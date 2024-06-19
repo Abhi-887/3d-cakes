@@ -1,0 +1,21 @@
+
+@branch = BRANCH_1
+
+### Get Carts
+GET {{ host }}/branches/{{ branch }}/carts
+Accept: application/json
+Authorization: Bearer {{ accessToken }}
+
+### Store Cart
+
+POST {{ host }}/branches/{{ branch }}/carts
+Accept: application/json
+Authorization: Bearer {{ accessToken }}
+Content-Type: application/json
+
+{
+  "sku_id": "samsung-galaxy-s21-samsung-galaxy-s21-color-red-ram-2gb-storage-32gb",
+  "quantity": 2
+}
+
+###

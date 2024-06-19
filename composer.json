@@ -1,0 +1,214 @@
+{
+    "name": "lloricode/laravel-filament-ecommerce",
+    "description": "Ecommerce made using Laravel and Filament",
+    "type": "project",
+    "keywords": [
+        "project",
+        "filament",
+        "ecommerce"
+    ],
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Lloric Mayuga Garcia",
+            "email": "lloricode@gmail.com",
+            "homepage": "https://lloricode.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://ecommerce.lloricode.com",
+    "require": {
+        "php": "^8.3",
+        "akaunting/laravel-money": "^5.2",
+        "awcodes/filament-versions": "^2.0.1",
+        "bezhansalleh/filament-language-switch": "^3.0.6",
+        "creativeorange/gravatar": "^1.0.24",
+        "dedoc/scramble": "^0.9.0",
+        "filament/filament": "^3.2.61",
+        "filament/spatie-laravel-media-library-plugin": "^3.2.61",
+        "filament/spatie-laravel-settings-plugin": "^3.2.61",
+        "filament/spatie-laravel-tags-plugin": "^3.2.61",
+        "flowframe/laravel-trend": "^0.2",
+        "guzzlehttp/guzzle": "^7.8.1",
+        "hasnayeen/themes": "^3.0.22",
+        "inspector-apm/inspector-laravel": "^4.8.1",
+        "khill/php-duration": "^1.1",
+        "laravel/framework": "^11.1.0",
+        "laravel/horizon": "^5.23.2",
+        "laravel/pulse": "^1.0@beta",
+        "laravel/sanctum": "^4.0.1",
+        "laravel/tinker": "^2.9.0",
+        "laraveldaily/laravel-invoices": "^4.0",
+        "league/flysystem-aws-s3-v3": "^3.26.0",
+        "lloricode/php-timezone": "^1.1.1",
+        "lloricode/spatie-image-optimizer-health-check": "^2.0.3",
+        "maatwebsite/excel": "^3.1.55",
+        "mpdf/mpdf": "^8.2.3",
+        "opcodesio/log-viewer": "^3.6.0",
+        "sentry/sentry-laravel": "^4.4.0",
+        "shuvroroy/filament-spatie-laravel-backup": "^2.1.3",
+        "shuvroroy/filament-spatie-laravel-health": "^2.0.1",
+        "spatie/cpu-load-health-check": "^1.0.4",
+        "spatie/eloquent-sortable": "^4.2.0",
+        "spatie/laravel-activitylog": "^4.8.0",
+        "spatie/laravel-backup": "^8.6.0",
+        "spatie/laravel-json-api-paginate": "^1.14",
+        "spatie/laravel-permission": "^6.4.0",
+        "spatie/laravel-query-builder": "^5.8",
+        "spatie/laravel-route-attributes": "^1.22.0",
+        "spatie/laravel-support-bubble": "^1.6",
+        "stechstudio/filament-impersonate": "^3.8.0",
+        "timacdonald/json-api": "^1.0.0-beta.7",
+        "victord11/ssl-certification-health-check": "^1.0.3"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.12.2",
+        "barryvdh/laravel-ide-helper": "^3.0",
+        "beyondcode/helo-laravel": "^1.8",
+        "canvural/larastan-strict-rules": "^2.1.10",
+        "driftingly/rector-laravel": "^1.1",
+        "fakerphp/faker": "^1.23.1",
+        "larastan/larastan": "^2.9.2",
+        "laravel/pint": "^1.15.0",
+        "laravel/sail": "^1.29.1",
+        "laravel/telescope": "^5.0.1",
+        "mockery/mockery": "^1.6.11",
+        "nunomaduro/collision": "^8.1.1",
+        "pestphp/pest": "^2.34.5",
+        "pestphp/pest-plugin-laravel": "^2.3",
+        "pestphp/pest-plugin-livewire": "^2.1",
+        "phpstan/extension-installer": "^1.3.1",
+        "phpstan/phpstan-deprecation-rules": "^1.1.4",
+        "rector/rector": "^1.0.3",
+        "smknstd/fakerphp-picsum-images": "^1.0.2",
+        "spatie/laravel-horizon-watcher": "^1.1.0",
+        "spatie/laravel-ignition": "^2.4.2",
+        "spatie/laravel-ray": "^1.35.1",
+        "spatie/pest-plugin-test-time": "^2.1",
+        "worksome/request-factories": "^3.3"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/",
+            "Database\\Support\\": "database/supports/",
+            "Domain\\": "domain/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
+        },
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.3"
+        },
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+                "laravel/telescope"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan filament:upgrade --ansi",
+            "@php artisan themes:upgrade --ansi",
+            "@php artisan vendor:publish --tag=log-viewer-assets --ansi --force",
+            "@php artisan vendor:publish --tag=horizon-assets --ansi --force",
+            "@php artisan vendor:publish --tag=telescope-assets --ansi --force"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan filament:upgrade --ansi",
+            "@php artisan themes:upgrade --ansi",
+            "@php artisan log-viewer:publish",
+            "@php artisan horizon:publish",
+            "@php artisan telescope:publish",
+            "@php artisan ide-helper:generate --ansi",
+            "@php artisan ide-helper:meta --ansi"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "cache-all": [
+            "composer dumpautoload -o",
+            "@php artisan event:cache --ansi",
+            "@php artisan config:cache --ansi",
+            "@php artisan route:cache --ansi",
+            "@php artisan view:cache --ansi",
+            "@php artisan settings:discover --ansi",
+            "@php artisan icons:cache --ansi",
+            "@php artisan filament:cache-components --ansi"
+        ],
+        "clear-all": [
+            "composer dumpautoload -o",
+            "@php artisan optimize:clear --ansi",
+            "@php artisan settings:clear-discovered --ansi",
+            "@php artisan settings:clear-cache --ansi",
+            "@php artisan icons:clear --ansi",
+            "@php artisan filament:clear-cached-components --ansi"
+        ],
+        "format": "vendor/bin/pint",
+        "format-dirty": "vendor/bin/pint --dirty",
+        "format-dry-run": "vendor/bin/pint --test",
+        "ide-helper": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "@php artisan ide-helper:generate --ansi",
+            "@php artisan ide-helper:meta --ansi"
+        ],
+        "ide-helper-model": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "@php artisan ide-helper:generate --ansi",
+            "@php artisan ide-helper:meta --ansi",
+            "@php artisan ide-helper:models --reset --write --ansi",
+            "vendor/bin/pint"
+        ],
+        "refactor": "vendor/bin/rector process",
+        "refactor-dry-run": "vendor/bin/rector process --dry-run",
+        "refactor-no-timeout": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/bin/rector process"
+        ],
+        "reset": [
+            "composer clear-all",
+            "composer cache-all"
+        ],
+        "test": "vendor/bin/pest -p",
+        "test-coverage": [
+            "Composer\\Config::disableProcessTimeout",
+            "XDEBUG_MODE=coverage vendor/bin/pest -p --coverage --coverage-html build/coverage-html --coverage"
+        ],
+        "analyse": "vendor/bin/phpstan analyse",
+        "analyse-generate-baseline": "vendor/bin/phpstan analyse --generate-baseline",
+        "remove-ray": [
+            "vendor/bin/remove-ray.sh app",
+            "vendor/bin/remove-ray.sh database",
+            "vendor/bin/remove-ray.sh domain",
+            "vendor/bin/remove-ray.sh resources",
+            "vendor/bin/remove-ray.sh routes",
+            "vendor/bin/remove-ray.sh tests"
+        ]
+    }
+}

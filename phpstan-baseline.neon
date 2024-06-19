@@ -1,0 +1,96 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Class App\\\\Casts\\\\MoneyCast extends generic class Akaunting\\\\Money\\\\Casts\\\\MoneyCast but does not specify its types\\: TGet, TSet$#"
+			count: 1
+			path: app/Casts/MoneyCast.php
+
+		-
+			message: "#^Call to an undefined method Domain\\\\Access\\\\Admin\\\\Models\\\\Admin\\|Domain\\\\Shop\\\\Customer\\\\Models\\\\Customer\\:\\:isZeroDayAdmin\\(\\)\\.$#"
+			count: 1
+			path: app/Filament/Admin/Pages/Auth/EditProfile.php
+
+		-
+			message: "#^Call to an undefined method Domain\\\\Access\\\\Admin\\\\Models\\\\Admin\\|Domain\\\\Shop\\\\Customer\\\\Models\\\\Customer\\:\\:isSuperAdmin\\(\\)\\.$#"
+			count: 1
+			path: app/Filament/Admin/Pages/Backups.php
+
+		-
+			message: "#^Call to an undefined method Domain\\\\Access\\\\Admin\\\\Models\\\\Admin\\|Domain\\\\Shop\\\\Customer\\\\Models\\\\Customer\\:\\:isSuperAdmin\\(\\)\\.$#"
+			count: 1
+			path: app/Filament/Admin/Pages/HealthCheckResults.php
+
+		-
+			message: "#^Call to an undefined method Domain\\\\Access\\\\Admin\\\\Models\\\\Admin\\|Domain\\\\Shop\\\\Customer\\\\Models\\\\Customer\\:\\:isSuperAdmin\\(\\)\\.$#"
+			count: 3
+			path: app/Filament/Admin/Resources/Access/AdminResource.php
+
+		-
+			message: "#^Method App\\\\Filament\\\\Admin\\\\Resources\\\\Access\\\\RoleResource\\\\Schema\\\\PermissionSchema\\:\\:permissionGroup\\(\\) should return Illuminate\\\\Support\\\\Collection\\<string, Illuminate\\\\Support\\\\Collection\\<int, App\\\\Filament\\\\Admin\\\\Resources\\\\Access\\\\RoleResource\\\\Support\\\\PermissionData\\>\\> but returns Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\), Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\), App\\\\Filament\\\\Admin\\\\Resources\\\\Access\\\\RoleResource\\\\Support\\\\PermissionData\\>\\>\\.$#"
+			count: 1
+			path: app/Filament/Admin/Resources/Access/RoleResource/Schema/PermissionSchema.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<\\(int\\|string\\),Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\:\\:map\\(\\) expects callable\\(Illuminate\\\\Database\\\\Eloquent\\\\Model, int\\|string\\)\\: App\\\\Filament\\\\Admin\\\\Resources\\\\Access\\\\RoleResource\\\\Support\\\\PermissionData, Closure\\(Domain\\\\Access\\\\Role\\\\Models\\\\Permission\\)\\: App\\\\Filament\\\\Admin\\\\Resources\\\\Access\\\\RoleResource\\\\Support\\\\PermissionData given\\.$#"
+			count: 1
+			path: app/Filament/Admin/Resources/Access/RoleResource/Schema/PermissionSchema.php
+
+		-
+			message: "#^Call to an undefined method Domain\\\\Access\\\\Admin\\\\Models\\\\Admin\\|Domain\\\\Shop\\\\Customer\\\\Models\\\\Customer\\:\\:canAccessTenant\\(\\)\\.$#"
+			count: 1
+			path: app/Filament/Admin/Resources/Shop/BranchResource.php
+
+		-
+			message: "#^Call to an undefined method Domain\\\\Access\\\\Admin\\\\Models\\\\Admin\\|Domain\\\\Shop\\\\Customer\\\\Models\\\\Customer\\:\\:canAccessTenant\\(\\)\\.$#"
+			count: 1
+			path: app/Filament/Admin/Resources/Shop/BranchResource/Pages/EditBranch.php
+
+		-
+			message: "#^Call to an undefined method Filament\\\\Tables\\\\Actions\\\\ExportBulkAction\\:\\:withActivityLog\\(\\)\\.$#"
+			count: 1
+			path: app/Filament/Admin/Resources/Shop/CategoryResource.php
+
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Builder\\:\\:whereParent\\(\\)\\.$#"
+			count: 1
+			path: app/Filament/Admin/Resources/Shop/CategoryResource.php
+
+		-
+			message: "#^Call to an undefined method Filament\\\\Actions\\\\ExportAction\\:\\:withActivityLog\\(\\)\\.$#"
+			count: 1
+			path: app/Filament/Admin/Resources/Shop/CategoryResource/Pages/ListCategories.php
+
+		-
+			message: "#^Call to an undefined method Filament\\\\Actions\\\\ImportAction\\:\\:withActivityLog\\(\\)\\.$#"
+			count: 1
+			path: app/Filament/Admin/Resources/Shop/CategoryResource/Pages/ListCategories.php
+
+		-
+			message: "#^Call to an undefined method Filament\\\\Tables\\\\Actions\\\\ExportBulkAction\\:\\:withActivityLog\\(\\)\\.$#"
+			count: 1
+			path: app/Filament/Admin/Resources/Shop/OrderResource.php
+
+		-
+			message: "#^Call to an undefined method Filament\\\\Actions\\\\ExportAction\\:\\:withActivityLog\\(\\)\\.$#"
+			count: 1
+			path: app/Filament/Admin/Resources/Shop/OrderResource/Pages/ListOrders.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of static method Illuminate\\\\Support\\\\Str\\:\\:of\\(\\) expects string, class\\-string\\<Domain\\\\Access\\\\Role\\\\Contracts\\\\HasPermissionPage\\>\\|Domain\\\\Access\\\\Role\\\\Contracts\\\\HasPermissionPage given\\.$#"
+			count: 1
+			path: domain/Access/Role/Support.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of static method Illuminate\\\\Support\\\\Str\\:\\:of\\(\\) expects string, class\\-string\\<Domain\\\\Access\\\\Role\\\\Contracts\\\\HasPermissionWidgets\\>\\|Domain\\\\Access\\\\Role\\\\Contracts\\\\HasPermissionWidgets given\\.$#"
+			count: 1
+			path: domain/Access/Role/Support.php
+
+		-
+			message: "#^Method Domain\\\\Shop\\\\Product\\\\Database\\\\Factories\\\\SkuFactory\\:\\:forProduct\\(\\) has parameter \\$branches with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection but does not specify its types\\: TKey, TModel$#"
+			count: 1
+			path: domain/Shop/Product/Database/Factories/SkuFactory.php
+
+		-
+			message: "#^Method Domain\\\\Shop\\\\Product\\\\Database\\\\Factories\\\\SkuFactory\\:\\:withDefaultData\\(\\) has parameter \\$branches with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection but does not specify its types\\: TKey, TModel$#"
+			count: 1
+			path: domain/Shop/Product/Database/Factories/SkuFactory.php
