@@ -1,0 +1,48 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.0' # Set your PHP version
+
+    - name: Install dependencies
+      run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+    - name: Run tests
+      run: php artisan test
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to EC2
+      env:
+        AWS_EC2_HOST: ${{ secrets.AWS_EC2_HOST }}
+        AWS_EC2_KEY: ${{ secrets.AWS_EC2_KEY }}
+      run: |
+        echo "${{ secrets.AWS_EC2_KEY }}" > key.pem
+        chmod 400 key.pem
+        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.AWS_EC2_HOST }} << 'EOF'
+          cd /var/www/html/cakes
+          git pull origin main
+          composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+          php artisan migrate --force
+          sudo systemctl restart apache2
+        EOF
